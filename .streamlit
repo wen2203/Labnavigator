@@ -1,0 +1,6 @@
+[theme]
+#primaryColor = "#7a4eb5"               # Donkerpaars voor knoppen en accenten
+#backgroundColor = "#dcd2fc"            # Lichtpaars achtergrond
+#secondaryBackgroundColor = "#ebe4ff"   # Iets lichter voor panelen
+textColor = "#a10d57"                  # Diep donkerpaars voor tekst
+font = "monospace"
