@@ -187,7 +187,7 @@ elif menu == "Gen downloaden (NCBI database)":
             return fasta_data if fasta_data.strip() else None
         except Exception as e:
             return None
-
+ 
     if st.button("Downloaden"):
         data = fetch_gene_data(gene, organism)
         if data:
