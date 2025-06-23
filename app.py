@@ -2,8 +2,10 @@ import streamlit as st  # Import Streamlit om een webapp te maken
 import os  # Import os voor bestands- en mapbewerkingen
 from labmate import connect_db, calculate_tm  # Eigen functies: verbinden met DB, smelttemp berekenen
 from genemate import convert_fastq_to_fasta, download_gene  # Eigen functies voor bestand en gen ophalen
+from Bio import SeqIO
+import io
 import re
-
+import io
 # Verbind met de database en krijg cursor om queries uit te voeren
 conn, c = connect_db()
 
@@ -123,6 +125,7 @@ elif menu == "Smelttemperatuur berekenen":
         resultaat = calculate_tm(seq)
         st.write(resultaat)
 
+
 elif menu == "Convert FASTQ → FASTA":
     from Bio import SeqIO
     import io
@@ -187,7 +190,7 @@ elif menu == "Gen downloaden (NCBI database)":
             return fasta_data if fasta_data.strip() else None
         except Exception as e:
             return None
- 
+
     if st.button("Downloaden"):
         data = fetch_gene_data(gene, organism)
         if data:
